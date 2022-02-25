@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { AddPatientComponent } from './add-patient/add-patient.component';
 import { ApiService } from './services/api.service';
+import {MatPaginator} from '@angular/material/paginator';
+import {MatSort} from '@angular/material/sort';
+import {MatTableDataSource} from '@angular/material/table';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +13,12 @@ import { ApiService } from './services/api.service';
 })
 export class AppComponent implements OnInit{
   title = 'hospital-system-log';
+  
+  displayedColumns: string[] = ['name', 'insurance', 'dateAdmited'];
+  dataSource!: MatTableDataSource<any>;
 
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
   constructor(private dialog: MatDialog, private api : ApiService){
 
   }
