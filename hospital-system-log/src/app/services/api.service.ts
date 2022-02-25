@@ -14,4 +14,7 @@ export class ApiService {
   getPatient(){
     return this.http.get<any>("http://localhost:9092/api/patients/");
   }
+  putPatient(data: any, id : number){
+    return this.http.put<any>("http://localhost:9092/api/patients/"+id, data);
+  }
 }
