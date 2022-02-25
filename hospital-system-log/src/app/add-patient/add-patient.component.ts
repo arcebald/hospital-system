@@ -10,6 +10,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class AddPatientComponent implements OnInit {
    patientForm!: FormGroup;
+   actionBtn : string = "Save";
   constructor(private formBuilder: FormBuilder, 
               private api : ApiService, 
               @Inject(MAT_DIALOG_DATA) public editData : any,
