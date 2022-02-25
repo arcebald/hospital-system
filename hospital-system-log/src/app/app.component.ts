@@ -14,7 +14,7 @@ import {MatTableDataSource} from '@angular/material/table';
 export class AppComponent implements OnInit{
   title = 'hospital-system-log';
   
-  displayedColumns: string[] = ['name', 'insurance', 'dateAdmited'];
+  displayedColumns: string[] = ['name', 'insurance', 'dateAdmited', 'action'];
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
