@@ -45,6 +45,14 @@ export class AppComponent implements OnInit{
      }
    })
   }
+
+  editPatient(row: any){
+    this.dialog.open(AddPatientComponent, {
+      width: '30%',
+      data:row 
+    })
+  }
+
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();

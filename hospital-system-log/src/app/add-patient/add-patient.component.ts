@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ApiService } from '../services/api.service';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-add-patient',
@@ -10,14 +10,23 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class AddPatientComponent implements OnInit {
    patientForm!: FormGroup;
-  constructor(private formBuilder: FormBuilder, private api : ApiService, private dialogRef : MatDialogRef<AddPatientComponent>) { }
+  constructor(private formBuilder: FormBuilder, 
+              private api : ApiService, 
+              @Inject(MAT_DIALOG_DATA) public editData : any,
+              private dialogRef : MatDialogRef<AddPatientComponent>) { }
 
   ngOnInit(): void {
     this.patientForm = this.formBuilder.group({
       name :['', Validators.required],
       insurance :['', Validators.required],
       dateAdmited :['', Validators.required]
-    })
+    });
+     console.log(this.editData);
+     if(this.editData){
+       this.patientForm.controls['name'].setValue(this.editData.name);
+       this.patientForm.controls['insurance'].setValue(this.editData.insurance);
+       this.patientForm.controls['dateAdmited'].setValue(this.editData.dateAdmited);
+     }
   }
 
   addPatient(){
