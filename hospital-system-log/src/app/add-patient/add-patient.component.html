@@ -1,0 +1,28 @@
+<h1 mat-dialog-title>Add Patient Form</h1>
+<div mat-dialog-content>
+<form [formGroup] = "patientForm">
+    <mat-form-field appearance="outline">
+        <mat-label>Patient Name</mat-label>
+        <input formControlName= "patientName" matInput placeholder="Placeholder">     
+     </mat-form-field>
+
+     <mat-form-field appearance="outline">
+        <mat-label>Patient Insurance</mat-label>
+        <mat-select formControlName="insurance">
+            <mat-option value ="PPO">PPO</mat-option>
+            <mat-option value ="HMO">HMO</mat-option>  
+            <mat-option value ="POS">POS</mat-option>   
+       </mat-select>
+     </mat-form-field>
+
+     <mat-form-field appearance="outline">
+        <mat-label>Date Admited</mat-label>
+        <input formControlName="dateAdmited" matInput placeholder="Date Admited">     
+     </mat-form-field>
+</form>
+    
+</div>
+<div mat-dialog-actions [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+    <button style="margin-left: 8px;" mat-raised-button color="primary" (click)="addPatient()">Save</button>
+</div>
