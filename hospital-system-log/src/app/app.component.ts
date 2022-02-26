@@ -29,7 +29,11 @@ export class AppComponent implements OnInit{
   openDialog() {
     this.dialog.open(AddPatientComponent, {
       width: '30%'
-    });
+    }).afterClosed().subscribe(val=>{
+      if(val ==='save'){
+        this.getAllPatients();
+      }
+    })
   }
   getAllPatients(){
    this.api.getPatient()
