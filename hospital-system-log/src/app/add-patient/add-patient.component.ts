@@ -54,7 +54,17 @@ export class AddPatientComponent implements OnInit {
       }
     }
     updatePatient(){
-
+    this.api.putPatient(this.patientForm.value, this.editData.id)
+    .subscribe({
+      next:(res)=>{
+        alert("Patient updated Successfully");
+        this.patientForm.reset();
+        this.dialogRef.close('update');
+      },
+      error:()=>{
+        alert("Error while updating the record!");
+      }
+    })
     
   }
 
