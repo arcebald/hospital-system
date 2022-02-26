@@ -17,4 +17,7 @@ export class ApiService {
   putPatient(data: any, id : number){
     return this.http.put<any>("http://localhost:9092/api/patients/"+id, data);
   }
+  deletePatient(id:number){
+  return this.http.delete<any>("http://localhost:9092/api/patients/"+id);
+}
 }
