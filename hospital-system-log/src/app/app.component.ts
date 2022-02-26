@@ -60,6 +60,17 @@ export class AppComponent implements OnInit{
       }
     })
   }
+  deletePatient(id : number){
+    this.api.deletePatient(id)
+    .subscribe({
+      next:(res)=>{
+        alert("Patient deleted successfully!");
+      },
+      error:()=>{
+        alert("Error while deleting the patient!");
+      }
+    })
+  }
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
