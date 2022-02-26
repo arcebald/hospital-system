@@ -64,10 +64,12 @@ export class AppComponent implements OnInit{
     this.api.deletePatient(id)
     .subscribe({
       next:(res)=>{
-        alert("Patient deleted successfully!");
+        alert("Patient deleted successfully!")
+        this.getAllPatients();
       },
-      error:()=>{
-        alert("Error while deleting the patient!");
+      error:(err)=>{
+        console.log(err);
+        alert("Error while deleting the patient!")
       }
     })
   }

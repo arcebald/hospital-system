@@ -14,11 +14,16 @@
             <mat-option value ="POS">POS</mat-option>   
        </mat-select>
      </mat-form-field>
-
      <mat-form-field appearance="outline">
+        <mat-label>Choose a date</mat-label>
+        <input  formControlName="dateAdmited" matInput [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+     <!-- <mat-form-field appearance="outline">
         <mat-label>Date Admited</mat-label>
         <input formControlName="dateAdmited" matInput placeholder="Date Admited">     
-     </mat-form-field>
+     </mat-form-field> -->
 </form>
     
 </div>

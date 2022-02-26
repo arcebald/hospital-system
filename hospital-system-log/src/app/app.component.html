@@ -16,23 +16,24 @@
     <div class="mat-elevation-z8">
       <table mat-table [dataSource]="dataSource" matSort>
     
-        <!-- ID Column -->
+       
         <ng-container matColumnDef="name">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Full Name </th>
           <td mat-cell *matCellDef="let row"> {{row.name}} </td>
         </ng-container>
     
-        <!-- Progress Column -->
+       
         <ng-container matColumnDef="insurance">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Insurance </th>
           <td mat-cell *matCellDef="let row"> {{row.insurance}} </td>
         </ng-container>
     
-        <!-- Name Column -->
+      
         <ng-container matColumnDef="dateAdmited">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Date Admited </th>
-          <td mat-cell *matCellDef="let row"> {{row.dateAdmited}} </td>
+          <td mat-cell *matCellDef="let row"> {{row.dateAdmited | date}} </td>
         </ng-container>
+        
         <ng-container matColumnDef="action">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
           <td mat-cell *matCellDef="let row">
