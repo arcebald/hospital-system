@@ -1,1 +1,47 @@
-<p>patient-tests works!</p>
+<h1>Patient Info</h1>
+
+<div class="container">
+    <div style="margin-top: 10px;">
+      <mat-form-field appearance="standard">
+        <mat-label>Filter</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+      </mat-form-field>
+  
+      <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" matSort>
+  
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Test Name </th>
+            <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+          </ng-container>
+  
+  
+          <ng-container matColumnDef="testDate">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Test Date </th>
+            <td mat-cell *matCellDef="let row"> {{row.testDate}} </td>
+          </ng-container>
+  
+  
+          <ng-container matColumnDef="testTime">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Test Time </th>
+            <td mat-cell *matCellDef="let row"> {{row.testTime}} </td>
+          </ng-container>
+  
+          <ng-container matColumnDef="testResult">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Test Results </th>
+            <td mat-cell *matCellDef="let row">{{row.testResult}} </td>
+          </ng-container>
+  
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+          <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+          </tr>
+        </table>
+  
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+      </div>
+    </div>
+    <router-outlet></router-outlet>
+  </div>
