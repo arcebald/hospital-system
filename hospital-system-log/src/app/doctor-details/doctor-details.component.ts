@@ -13,8 +13,8 @@ import { ApiService } from '../services/api.service';
 export class DoctorDetailsComponent implements OnInit {
   myParam: any;
   doctorPatients: any;
-
-  displayedColumns: string[] = ['name', 'insurance', 'dateAdmited'];
+  testsList: any;
+  displayedColumns: string[] = ['name', 'insurance', 'dateAdmited', 'testsList'];
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -23,7 +23,6 @@ export class DoctorDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.myParam = this.route.snapshot.paramMap.get('id');
-     console.log(this.myParam);
      this.getDoctorPatients(this.myParam);
   }
 
@@ -33,7 +32,9 @@ export class DoctorDetailsComponent implements OnInit {
       next:(res)=>{
         this.doctorPatients = res;
         this.dataSource = res;
+        this.testsList = res.testsList;
         console.log(res);
+        console.log(res.testsList);
       },
       error:(err)=>{
         alert("Error while fetching test records!");
