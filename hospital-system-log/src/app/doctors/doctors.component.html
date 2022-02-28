@@ -1,1 +1,64 @@
-<p>doctors works!</p>
+<mat-toolbar color="primary">
+   
+    <span class="filler"></span>
+    <button mat-raised-button color="warn" (click)="openDialog()">Add Doctor</button>
+  
+</mat-toolbar>
+
+<div class="container">
+  <div style="margin-top: 10px;">
+    <mat-form-field appearance="standard">
+      <mat-label>Filter</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+    </mat-form-field>
+
+    <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource1" matSort>
+
+        <ng-container matColumnDef="doctorName">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Full Name </th>
+          <td mat-cell *matCellDef="let row"> {{row.doctorName}} </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="specialization">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Specialization </th>
+          <td mat-cell *matCellDef="let row"> {{row.specialization}} </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="action">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+          <td mat-cell *matCellDef="let row">
+
+            <button mat-icon-button (click)="viewDoctor(row.id)" color="primary">
+              <mat-icon>dehaze</mat-icon>
+            </button>
+
+            <button mat-icon-button (click)="editDoctor(row)" color="primary">
+              <mat-icon>edit</mat-icon>
+            </button>
+
+            <button mat-icon-button (click)="deleteDoctor(row.id)" color="warn">
+              <mat-icon>delete</mat-icon>
+            </button>
+
+            
+
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+        <tr class="mat-row" *matNoDataRow>
+          <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+        </tr>
+      </table>
+
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+</div>
+
