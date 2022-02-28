@@ -20,4 +20,21 @@ export class ApiService {
   deletePatient(id: number) {
     return this.http.delete<any>("http://localhost:9092/api/patients/" + id);
   }
+
+  getPatientTest(id: number){
+     return this.http.get<any>(`http://localhost:9092/api/patients/${id}/tests/`);
+  }
+
+  postDoctor(data: any){
+    return this.http.post<any>("http://localhost:9092/api/doctors/register/", data);
+  }
+  getDoctor(){
+    return this.http.get<any>("http://localhost:9092/api/doctors/");
+  }
+  putDoctor(data: any, id: number){
+    return this.http.put<any>("http://localhost:9092/api/doctors/" + id, data);
+  }
+  deleteDoctor(id: number) {
+    return this.http.delete<any>("http://localhost:9092/api/doctors/" + id);
+  }
 }
