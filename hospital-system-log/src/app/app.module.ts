@@ -18,10 +18,24 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { AddDoctorComponent } from './add-doctor/add-doctor.component';
+import { DoctorsComponent } from './doctors/doctors.component';
+import { ImageComponent } from './image/image.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { PatientTestsComponent } from './patient-tests/patient-tests.component';
+import { PatientsComponent } from './patients/patients.component';
+import { DoctorDetailsComponent } from './doctor-details/doctor-details.component';
 @NgModule({
   declarations: [
     AppComponent,
-    AddPatientComponent
+    AddPatientComponent,
+    AddDoctorComponent,
+    DoctorsComponent,
+    ImageComponent,
+    PageNotFoundComponent,
+    PatientTestsComponent,
+    PatientsComponent,
+    DoctorDetailsComponent
   ],
   imports: [
     BrowserModule,
