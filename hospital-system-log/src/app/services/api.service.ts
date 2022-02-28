@@ -37,4 +37,7 @@ export class ApiService {
   deleteDoctor(id: number) {
     return this.http.delete<any>("http://localhost:9092/api/doctors/" + id);
   }
+  getDoctorPatient(id: number){
+    return this.http.get<any>(`http://localhost:9092/api/doctors/${id}/patients/`);
+  }
 }
