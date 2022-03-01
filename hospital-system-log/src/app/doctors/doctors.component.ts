@@ -77,6 +77,7 @@ export class DoctorsComponent implements OnInit {
     })
   }
 
+
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource1.filter = filterValue.trim().toLowerCase();
