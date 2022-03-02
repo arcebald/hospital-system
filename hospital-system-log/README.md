@@ -22,3 +22,13 @@
 |6. As a user, I would like to see details about a doctor.
 |7. As a user, I would like to view/detele/edit a doctor.
 |8. As a user, I would like to see a list of patient's tests
+
+
+## System Tools Used
+
+- Angular
+- Angular Material
+- Bootstrap
+- Heroku
+- Node JS
+- VS Code
