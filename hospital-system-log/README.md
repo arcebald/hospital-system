@@ -1,27 +1,54 @@
-# HospitalSystemLog
+# Hospital System Log
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.2.
+<h1 align ="center">About the Project</h1>
 
-## Development server
+        Hospital system log is a usefull system to register a doctor/patient into the system and have the information 
+    fetched in a nice table. It has the features to add add/edit/delete a doctor or patient from the system. It also 
+    tracks the patient data about the medical tests and data/time of admision.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## The Aproach
 
-## Code scaffolding
+   Then I started my project I did not know exactly how the front end will look like. I started to do some sketches with a 
+wireframe and did a lot of google researh about the best practices to achieve my goal. After I finished my back end API I started
+a new angular project and installed bootstrap, angular material to help me to move fast. I started with doctor component and kept 
+adding functionality fo the TS and html templates. After I tested the component to work properly I moved to the next component 
+which is patient. And I followed the pattern for the other components. Adding the backend API to the Heroku cloud was challenging
+because of the CORS errors. After some research I fixed the issue by adding a new file for the CORS config on backend java project.
+- ### System registration for a hospital.
+ 
+![home.png](images/home.png)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- ### Patient list
 
-## Build
+![patient.png](images/patient.png)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- ### Doctor add form
 
-## Running unit tests
+![doctorform.png](images/doctorform.png)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## User Stories
 
-## Running end-to-end tests
+| |
+| --- |
+|1. As a user, I would like to see all the patients in my system
+|2. As a user, I would like to view more details about the patient
+|3. As a user, I would like to view/detele/edit a list of doctors.
+|4. As a user, I would like to add a doctor.
+|5. As a user, I would like to assign a doctor to a patient.
+|6. As a user, I would like to see details about a doctor.
+|7. As a user, I would like to view/detele/edit a doctor.
+|8. As a user, I would like to see a list of patient's tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
+## System Tools Used
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Angular
+- Angular Material
+- Bootstrap
+- Heroku
+- Node JS
+- VS Code
+
+## Project Structure
+
+![tree.png](images/tree.png)
