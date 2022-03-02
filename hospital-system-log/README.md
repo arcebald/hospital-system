@@ -1,6 +1,6 @@
 # Hospital System Log
 
- ###System registration for a hospital.
+- ### System registration for a hospital.
  
 ![home.png](images/home.png)
 
