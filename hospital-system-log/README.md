@@ -1,5 +1,7 @@
 # Hospital System Log
 
+## About the Project
+
 - ### System registration for a hospital.
  
 ![home.png](images/home.png)
