@@ -6,6 +6,14 @@
     fetched in a nice table. It has the features to add add/edit/delete a doctor or patient from the system. It also 
     tracks the patient data about the medical tests and data/time of admision.
 
+## The Aproach
+
+   Then I started my project I did not know exactly how the front end will look like. I started to do some sketches with a 
+wireframe and did a lot of google researh about the best practices to achieve my goal. After I finished my back end API I started
+a new angular project and installed bootstrap, angular material to help me to move fast. I started with doctor component and kept 
+adding functionality fo the TS and html templates. After I tested the component to work properly I moved to the next component 
+which is patient. And I followed the pattern for the other components. Adding the backend API to the Heroku cloud was challenging
+because of the CORS errors. After some research I fixed the issue by adding a new file for the CORS config on backend java project.
 - ### System registration for a hospital.
  
 ![home.png](images/home.png)
