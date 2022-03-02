@@ -2,6 +2,8 @@
 
 <h1 align ="center">About the Project</h1>
 
+    Hospital system log is a usefull system to register a doctor/patient into the system and have the information fetched in a nice table. It has the features to add add/edit/delete a doctor or patient from the system. It also tracks the patient data about the medical tests and data/time of admision.
+
 - ### System registration for a hospital.
  
 ![home.png](images/home.png)
