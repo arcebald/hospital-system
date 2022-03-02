@@ -1,6 +1,6 @@
 # Hospital System Log
 
-<h1 align ="center">## About the Project</h1>
+<h1 align ="center">About the Project</h1>
 
 - ### System registration for a hospital.
  
