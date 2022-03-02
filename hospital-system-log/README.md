@@ -48,3 +48,7 @@ because of the CORS errors. After some research I fixed the issue by adding a ne
 - Heroku
 - Node JS
 - VS Code
+
+## Project Structure
+
+![tree.png](images/tree.png)
